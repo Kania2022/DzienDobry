@@ -1,0 +1,25 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 8bit
+Subject: Password reset on 127.0.0.1:8000
+From: webmaster@localhost
+To: testowy@niema.com
+Date: Thu, 09 Jun 2022 10:24:07 -0000
+Message-ID: <165477024791.11820.17875757321093544918@DESKTOP-M0MDGRK>
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+
+http://127.0.0.1:8000/accounts/reset/Mw/b6r3s7-16c0c5ec20c771dc243bebe014d3dc53/
+
+Your username, in case you’ve forgotten: testowy
+
+Thanks for using our site!
+
+The 127.0.0.1:8000 team
+
+
+
+-------------------------------------------------------------------------------

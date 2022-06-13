@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Good Morning{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'styles.css' %}" type="text/css" />
+    <img src="static/logo.jpg" />
+</head>
+<style type="text/css">
+h1 {font-size: 40px; #DATA
+    font-family: "Copperplate";
+    background-color: Orange;
+    border-style: outset;
+    border-width: 5px;
+    border-color: black;
+    margin: 1em;
+    color: white;
+}
+h2 {font-size: 30px; #DZIŚ IMIENINY OBCHODZĄ
+    font-family: "Copperplate";
+    background-color: #8f00cc;
+    border-style: outset;
+    border-width: 3px;
+    border-color: black;
+    margin: 0em;
+    color: white;
+}
+h3 {font-size: 20px; #PODANE IMIENINY
+    font-family: "Papyrus";
+    background-color: #e8b3ff;
+    border-style: outset;
+    border-width: 1px;
+    border-color: black;
+    margin: 0em;
+    color: black;
+}
+h4 {font-size: 30px; #OBECNA POGODA W
+    font-family: "Copperplate";
+    background-color: blue;
+    border-style: outset;
+    border-width: 3px;
+    border-color: black;
+    margin: 1em;
+    color: white;
+}
+h5 {font-size: 20px; #POGODA
+    font-family: "Copperplate";
+    background-color: Blue;
+    border-style: outset;
+    border-width: 3px;
+    border-color: black;
+    margin: 1em;
+    color: white;
+}
+h6 {font-size: 20px; #PODANA POGODA
+    font-family: "Copperplate";
+    background-color: #4d79ff;
+    border-style: outset;
+    opacity: 0.9;
+    border-width: 3px;
+    border-color: blue;
+    margin: 0.1em;
+    color: white;
+}
+h7 {font-size: 20px; #KITTY OF THE DAY, KITTY FACT
+    font-family: "Copperplate";
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 150px;
+    margin-left: 80px;
+    background-color: #800040;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    margin: 1em;
+    color: white;
+}
+h8 {font-size: 30px; #RANDOM CHUCK
+    font-family: "Copperplate";
+    background-color:  #33cc33;
+    border-style: solid;
+    border-width: 3px;
+    border-color: black;
+    margin: 1em;
+    color: white;
+}
+h9 {
+    margin: 5em;
+}
+</style>
+<body>
+  <main>
+    {% block content %}
+    {% endblock %}
+  </main>
+    <h1>{{ weather.day }}</h1>
+    <h2>DZIŚ IMIENINY OBCHODZĄ: </h2>
+        <h3>{{ nameday.nameday }}</h3>
+    <h4>OBECNA POGODA W::</h4>
+
+    <form method="post"> {% csrf_token %}
+      <input type="'text" placeholder="Podaj nazwę miejscowości" name="city"/>
+      <button type="submit">Enter</button>
+    </form>
+
+    <h6>{{ weather.city }}</h6>
+    <h6>{{ weather.description }}</h6>
+    <h6>Temp: {{ weather.temp }} °C</h6>
+    <h6>Pressure: {{ weather.pressure }} hPa </h6>
+    <h6>Wind: {{ weather.wind }} km/h </h6>
+    <h6><img src='http://openweathermap.org/img/w/{{weather.icon}}.png' width="150px"/></h6>
+    <form method="get"> {% csrf_token %}
+
+    <h7>Kitty of the day </h7>
+    <h9><img src='{{kitty.pic}}' /></h9>
+
+        <h7>{{ kitty.fact }}</h7>
+    </form>
+    <h8>Random Chuck:</h8>
+    <h8>{{ chuck.chuck }}</h8>
+</body>
+</html>
